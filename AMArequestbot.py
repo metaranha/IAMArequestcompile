@@ -4,7 +4,7 @@
 import praw
 import time
 
-USER = '<add reddit username'
+USER = '<add username>'
 PASS = '<add password>' 
 r = praw.Reddit('AMA request compiler /u/metaranha')
 r.login(USER, PASS)
@@ -13,7 +13,7 @@ print("creating output file")
 f = open('output.txt', 'w')
 r = praw.Reddit('IAMA')
 print("grabbing subreddit")
-subreddit = r.get_subreddit('IAMA').get_top_from_month(limit=25)
+subreddit = r.get_subreddit('IAMA').get_top_from_week(limit=25)
 print("getting hot list")
 count = 0
 for post in subreddit:
